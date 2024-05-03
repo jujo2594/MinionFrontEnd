@@ -1,0 +1,35 @@
+<div class="flex flex-column p-2">
+  <h3>Search Minions</h3>
+
+  <mat-form-field>
+    <mat-label>Minions Searchers</mat-label>
+    <input
+    type="text"
+    matInput
+    [formControl]="searchInput"
+    (input)="searchMinion()"
+    [matAutocomplete]="auto"
+    />
+
+    <mat-autocomplete autoActiveFirstOption
+    #auto="matAutocomplete"
+    (optionSelected)="onSelectedOption( $event )">
+
+        <mat-option *ngFor="let minion of minions" [value]="minion">
+          {{minion.name}}
+        </mat-option>
+
+        <mat-option
+          *ngIf="minions.length === 0 && searchInput.value && searchInput.value.length > 0"
+          value="">
+          Result Not Found {{ searchInput.value }}
+        </mat-option>
+
+    </mat-autocomplete>
+
+  </mat-form-field>
+
+  {{ selectedMinion | json }}
+
+</div>
+

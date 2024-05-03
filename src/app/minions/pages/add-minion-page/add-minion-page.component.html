@@ -1,0 +1,90 @@
+<h1>
+  Agrega un Nuevo Minion
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid mt-6">
+  <div class="col-12 sm:col-6 ">
+    <mat-card>
+      <mat-card-content>
+        <form class="grid" [formGroup]="minionForm" (ngSubmit)="onSubmit()">
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Nombre</mat-label>
+            <input
+            type="text"
+            matInput
+            required
+            formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Edad</mat-label>
+            <input
+            type="number"
+            matInput
+            required
+            formControlName="age">
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>FronEnt Language</mat-label>
+            <input
+            type="text"
+            matInput
+            required
+            formControlName="frontLanguage">
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>BackEnd Language</mat-label>
+            <input
+            type="text"
+            matInput
+            required
+            formControlName="backLanguage">
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Team Name</mat-label>
+            <input
+            type="text"
+            matInput
+            required
+            formControlName="team">
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Project Name</mat-label>
+            <input
+            type="text"
+            matInput
+            required
+            formControlName="project">
+          </mat-form-field>
+        </form>
+
+        <div class="flex justify-content-between">
+
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="onSubmit()">
+            <mat-icon>save</mat-icon>
+            Add
+          </button>
+
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12
+  sm:col-6 cursor-pointer
+  flex justify-content-center
+  aling-content-center border-round-xl">
+    <img class="gru-image w-10" src="/assets/minions/minions.jpg" alt="Boss" mat-card-image>
+  </div>
+</div>
